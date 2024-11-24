@@ -1,0 +1,20 @@
+{
+    "title": "Capacitaciones",
+    "documents_title": "Documentos",
+    "new_training_button": "Nueva capacitación",
+    "new_document_button": "Subir documento",
+    "documents_button": "Documentos",
+    "last_trainings_title": "Últimas Capacitaciones",
+    "title_table_label": "Título",
+    "creation_date_table_label": "Fecha de creación",
+    "area_table_label": "Area",
+    "test_table_label": "Examen",
+    "action_table_label": "Acción",
+    
+    "test_table_true": "SI",
+    "test_table_false": "NO",
+
+    "total_tab_title": "Total",
+    "completed_tab_title": "Completadas",
+    "calification_tab_title": "Calificación promedio"
+}

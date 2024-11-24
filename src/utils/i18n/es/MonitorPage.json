@@ -1,0 +1,12 @@
+{
+    "title": "Monitor de estado",
+    "list_title": "Por usuarios",
+    "name_column_label": "Usuario",
+    "email_column_label": "Email",
+    "exams_data_column_label": "Capacitaciones",
+    "surveys_answered_column_label": "Encuestas",
+    "chat_uses_column_label": "Uso del chat",
+    "average_score_column_label": "Estado de ánimo",
+    "average_general_tab_title": "Satisfacción general",
+    "average_per_area_tab_title": "Satisfacción por área"
+}

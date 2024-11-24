@@ -1,0 +1,26 @@
+{
+    "title": "Chat",
+    "see_documents_button": "Ver todos los documentos",
+    "card_title": "Documentación",
+    "card_text": "Subir documentación para modelar los contenidos del char correspondientes a cada area.",
+    "load_document_button": "Cargar documento",
+    "subtitle": "Últimos chats",
+    "see_chat_link": "Ver chat",
+    "select_area_placeholder": "Seleccionar area...",
+
+    "title_column_label": "Título",
+    "last_message_column_label": "Último mensaje",
+    "area_column_label": "Area",
+    "action_column_label": "Acción",
+    "load_date_column_label": "Fecha de carga",
+
+    "documents_title" : "Documentos",
+    "see_document_link": "Ver Documento",
+
+    "history_title": "Historial",
+
+    "created_date_head_title": "Fecha de creación",
+    "last_message_head_title": "Último mensaje",
+    "area_head_title": "Area:",
+    "download_chat_head_button": "Descargar chat"
+}

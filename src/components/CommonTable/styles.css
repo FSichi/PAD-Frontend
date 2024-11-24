@@ -1,0 +1,14 @@
+table {
+    border-collapse: separate;
+    border-spacing: 0 0;
+    border-radius: 6px;
+}
+
+td {
+    border-top: solid #F6F6F6 1px;
+}
+
+th {
+    border-bottom: none;
+    border-radius: 6px;
+}

@@ -1,0 +1,32 @@
+{
+    "param_title": "Parámetros de la compañia",
+    "param_title_custom": "Parámetros de {{value}}",
+    "param_company_col_label": "Empresa",
+    "param_points_col_label": "Temperatura",
+    "param_tokens_col_label": "Tokens Máximos",
+    "param_ia_model_col_label": "Modelo IA",
+    "param_action_col_label": "Acciones",
+
+    "param_condense_input_label": "Condense prompt",
+    "param_qa_input_label": "Qa prompt",
+    "param_points_input_label": "Temperatura",
+    "param_tokens_input_label": "Tokens Máximos",
+    "param_ia_model_input_label": "Modelo IA",
+
+    "param_send_button_label": "Enviar",
+
+    "area_title": "Areas",
+
+    "area_name_col_label": "Nombre",
+    "area_company_col_label": "Empresa",
+    "area_action_col_label": "Acciones",
+
+    "company_title": "Empresas",
+    "company_new": "Nueva Empresa",
+
+    "company_id_col_label": "Id",
+    "company_name_col_label": "Nombre",
+    "company_action_col_label": "Acciones"
+
+
+}
