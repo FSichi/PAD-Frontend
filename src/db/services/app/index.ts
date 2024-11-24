@@ -1,3 +1,3 @@
-import ChatService from './chat.service';
+import ComplementService from './complements.service';
 
-export { ChatService };
+export { ComplementService };

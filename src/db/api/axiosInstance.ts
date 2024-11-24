@@ -37,7 +37,7 @@ const createAxiosInstance = (): AxiosInstance => {
 
     instance.interceptors.request.use(
         (config: InternalAxiosRequestConfig): InternalAxiosRequestConfig => {
-            const token = getCredentialsLocalStorage()?.auth.access_token;
+            const token = getCredentialsLocalStorage()?.token;
             if (token) {
                 config.headers.Authorization = `Bearer ${token}`;
             }

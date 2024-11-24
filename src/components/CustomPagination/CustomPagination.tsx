@@ -12,7 +12,7 @@ interface Props extends ContainerProps {
     setPage: (value: number) => void;
 }
 
-const ITEMS_PER_PAGE = 20;
+const ITEMS_PER_PAGE = 100;
 
 export const CustomPagination = ({ page, setPage, handleDotsClick, dataLength }: Props) => {
     const renderItem = useCallback(

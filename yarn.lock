@@ -548,6 +548,13 @@
   dependencies:
     "@swc/helpers" "^0.5.0"
 
+"@internationalized/date@^3.6.0":
+  version "3.6.0"
+  resolved "https://registry.yarnpkg.com/@internationalized/date/-/date-3.6.0.tgz#b30d43030bfed1855f20c9503606926d75bfdf64"
+  integrity sha512-+z6ti+CcJnRlLHok/emGEsWQhe7kfSmEW+/6qCzvKY67YPh7YOBfvc7+/+NXq+zJlbArg30tYpqLjNgcAYv2YQ==
+  dependencies:
+    "@swc/helpers" "^0.5.0"
+
 "@internationalized/message@^3.1.4", "@internationalized/message@^3.1.5":
   version "3.1.5"
   resolved "https://registry.yarnpkg.com/@internationalized/message/-/message-3.1.5.tgz#7391bba7a0489022a099f5bc37eb161889d520c8"
@@ -651,6 +658,33 @@
     "@react-aria/utils" "3.24.1"
     "@react-types/button" "3.9.4"
     "@react-types/shared" "3.23.1"
+
+"@nextui-org/calendar@^2.0.12":
+  version "2.0.12"
+  resolved "https://registry.yarnpkg.com/@nextui-org/calendar/-/calendar-2.0.12.tgz#e3e5df719cd08b710a51602d279a25d737b3c5b2"
+  integrity sha512-FnEnOQnsuyN+F+hy4LEJBvZZcfXMpDGgLkTdnDdoZObXQWwd0PWPjU8GzY+ukhhR5eiU7QIj2AADVRCvuAkiLA==
+  dependencies:
+    "@internationalized/date" "^3.5.4"
+    "@nextui-org/button" "2.0.38"
+    "@nextui-org/framer-utils" "2.0.25"
+    "@nextui-org/react-utils" "2.0.17"
+    "@nextui-org/shared-icons" "2.0.9"
+    "@nextui-org/shared-utils" "2.0.8"
+    "@nextui-org/use-aria-button" "2.0.10"
+    "@react-aria/calendar" "3.5.8"
+    "@react-aria/focus" "3.17.1"
+    "@react-aria/i18n" "3.11.1"
+    "@react-aria/interactions" "3.21.3"
+    "@react-aria/utils" "3.24.1"
+    "@react-aria/visually-hidden" "3.8.12"
+    "@react-stately/calendar" "3.5.1"
+    "@react-stately/utils" "3.10.1"
+    "@react-types/button" "3.9.4"
+    "@react-types/calendar" "3.4.6"
+    "@react-types/shared" "3.23.1"
+    "@types/lodash.debounce" "^4.0.7"
+    lodash.debounce "^4.0.8"
+    scroll-into-view-if-needed "3.0.10"
 
 "@nextui-org/framer-utils@2.0.25":
   version "2.0.25"
@@ -850,6 +884,22 @@
     "@react-types/shared" "^3.23.1"
     "@swc/helpers" "^0.5.0"
 
+"@react-aria/calendar@3.5.8":
+  version "3.5.8"
+  resolved "https://registry.yarnpkg.com/@react-aria/calendar/-/calendar-3.5.8.tgz#fd0858b34c8961b76957e9ac13b514f485c329a3"
+  integrity sha512-Whlp4CeAA5/ZkzrAHUv73kgIRYjw088eYGSc+cvSOCxfrc/2XkBm9rNrnSBv0DvhJ8AG0Fjz3vYakTmF3BgZBw==
+  dependencies:
+    "@internationalized/date" "^3.5.4"
+    "@react-aria/i18n" "^3.11.1"
+    "@react-aria/interactions" "^3.21.3"
+    "@react-aria/live-announcer" "^3.3.4"
+    "@react-aria/utils" "^3.24.1"
+    "@react-stately/calendar" "^3.5.1"
+    "@react-types/button" "^3.9.4"
+    "@react-types/calendar" "^3.4.6"
+    "@react-types/shared" "^3.23.1"
+    "@swc/helpers" "^0.5.0"
+
 "@react-aria/dialog@3.5.14":
   version "3.5.14"
   resolved "https://registry.yarnpkg.com/@react-aria/dialog/-/dialog-3.5.14.tgz#d4b078410c00b7cc7e6f25f67dfe53fa755be769"
@@ -932,6 +982,13 @@
     "@react-types/shared" "^3.25.0"
     "@swc/helpers" "^0.5.0"
 
+"@react-aria/live-announcer@^3.3.4":
+  version "3.4.1"
+  resolved "https://registry.yarnpkg.com/@react-aria/live-announcer/-/live-announcer-3.4.1.tgz#efedf706b23f6e1b526a3a35c14c202ac3e68487"
+  integrity sha512-4X2mcxgqLvvkqxv2l1n00jTzUxxe0kkLiapBGH1LHX/CxA1oQcHDqv8etJ2ZOwmS/MSBBiWnv3DwYHDOF6ubig==
+  dependencies:
+    "@swc/helpers" "^0.5.0"
+
 "@react-aria/overlays@3.22.1":
   version "3.22.1"
   resolved "https://registry.yarnpkg.com/@react-aria/overlays/-/overlays-3.22.1.tgz#7a01673317fa6517bb91b0b7504e303facdc9ccb"
@@ -995,6 +1052,16 @@
     "@swc/helpers" "^0.5.0"
     clsx "^2.0.0"
 
+"@react-aria/visually-hidden@3.8.12":
+  version "3.8.12"
+  resolved "https://registry.yarnpkg.com/@react-aria/visually-hidden/-/visually-hidden-3.8.12.tgz#89388b4773b8fbea4b5f9682e807510c14218c93"
+  integrity sha512-Bawm+2Cmw3Xrlr7ARzl2RLtKh0lNUdJ0eNqzWcyx4c0VHUAWtThmH5l+HRqFUGzzutFZVo89SAy40BAbd0gjVw==
+  dependencies:
+    "@react-aria/interactions" "^3.21.3"
+    "@react-aria/utils" "^3.24.1"
+    "@react-types/shared" "^3.23.1"
+    "@swc/helpers" "^0.5.0"
+
 "@react-aria/visually-hidden@^3.8.12", "@react-aria/visually-hidden@^3.8.17":
   version "3.8.17"
   resolved "https://registry.yarnpkg.com/@react-aria/visually-hidden/-/visually-hidden-3.8.17.tgz#b006aad526d78a9897fcbc793e57ddfe1adbd1af"
@@ -1003,6 +1070,28 @@
     "@react-aria/interactions" "^3.22.4"
     "@react-aria/utils" "^3.25.3"
     "@react-types/shared" "^3.25.0"
+    "@swc/helpers" "^0.5.0"
+
+"@react-stately/calendar@3.5.1":
+  version "3.5.1"
+  resolved "https://registry.yarnpkg.com/@react-stately/calendar/-/calendar-3.5.1.tgz#3e865d69675ba78f56e7abfadff0ef667f438a69"
+  integrity sha512-7l7QhqGUJ5AzWHfvZzbTe3J4t72Ht5BmhW4hlVI7flQXtfrmYkVtl3ZdytEZkkHmWGYZRW9b4IQTQGZxhtlElA==
+  dependencies:
+    "@internationalized/date" "^3.5.4"
+    "@react-stately/utils" "^3.10.1"
+    "@react-types/calendar" "^3.4.6"
+    "@react-types/shared" "^3.23.1"
+    "@swc/helpers" "^0.5.0"
+
+"@react-stately/calendar@^3.5.1":
+  version "3.6.0"
+  resolved "https://registry.yarnpkg.com/@react-stately/calendar/-/calendar-3.6.0.tgz#c770890160c33826206a015eb7da32fe8ece81d5"
+  integrity sha512-GqUtOtGnwWjtNrJud8nY/ywI4VBP5byToNVRTnxbMl+gYO1Qe/uc5NG7zjwMxhb2kqSBHZFdkF0DXVqG2Ul+BA==
+  dependencies:
+    "@internationalized/date" "^3.6.0"
+    "@react-stately/utils" "^3.10.5"
+    "@react-types/calendar" "^3.5.0"
+    "@react-types/shared" "^3.26.0"
     "@swc/helpers" "^0.5.0"
 
 "@react-stately/collections@3.10.7":
@@ -1054,6 +1143,13 @@
   dependencies:
     "@swc/helpers" "^0.5.0"
 
+"@react-stately/utils@^3.10.5":
+  version "3.10.5"
+  resolved "https://registry.yarnpkg.com/@react-stately/utils/-/utils-3.10.5.tgz#47bb91cd5afd1bafe39353614e5e281b818ebccc"
+  integrity sha512-iMQSGcpaecghDIh3mZEpZfoFH3ExBwTtuBEcvZ2XnGzCgQjeYXcMdIUwAfVQLXFTdHUHGF6Gu6/dFrYsCzySBQ==
+  dependencies:
+    "@swc/helpers" "^0.5.0"
+
 "@react-types/button@3.9.4":
   version "3.9.4"
   resolved "https://registry.yarnpkg.com/@react-types/button/-/button-3.9.4.tgz#ec10452e870660d31db1994f6fe4abfe0c800814"
@@ -1067,6 +1163,22 @@
   integrity sha512-rAyU+N9VaHLBdZop4zasn8IDwf9I5Q1EzHUKMtzIFf5aUlMUW+K460zI/l8UESWRSWAXK9/WPSXGxfcoCEjvAA==
   dependencies:
     "@react-types/shared" "^3.25.0"
+
+"@react-types/calendar@3.4.6":
+  version "3.4.6"
+  resolved "https://registry.yarnpkg.com/@react-types/calendar/-/calendar-3.4.6.tgz#66ddcefc3058492b3cce58a6e63b01558048b669"
+  integrity sha512-WSntZPwtvsIYWvBQRAPvuCn55UTJBZroTvX0vQvWykJRQnPAI20G1hMQ3dNsnAL+gLZUYxBXn66vphmjUuSYew==
+  dependencies:
+    "@internationalized/date" "^3.5.4"
+    "@react-types/shared" "^3.23.1"
+
+"@react-types/calendar@^3.4.6", "@react-types/calendar@^3.5.0":
+  version "3.5.0"
+  resolved "https://registry.yarnpkg.com/@react-types/calendar/-/calendar-3.5.0.tgz#a72fa15e08c7785b145005560baa35ad9b44627b"
+  integrity sha512-O3IRE7AGwAWYnvJIJ80cOy7WwoJ0m8GtX/qSmvXQAjC4qx00n+b5aFNBYAQtcyc3RM5QpW6obs9BfwGetFiI8w==
+  dependencies:
+    "@internationalized/date" "^3.6.0"
+    "@react-types/shared" "^3.26.0"
 
 "@react-types/checkbox@^3.8.4":
   version "3.8.4"
@@ -1106,6 +1218,11 @@
   version "3.25.0"
   resolved "https://registry.yarnpkg.com/@react-types/shared/-/shared-3.25.0.tgz#7223baf72256e918a3c29081bb1ecc6fad4fbf58"
   integrity sha512-OZSyhzU6vTdW3eV/mz5i6hQwQUhkRs7xwY2d1aqPvTdMe0+2cY7Fwp45PAiwYLEj73i9ro2FxF9qC4DvHGSCgQ==
+
+"@react-types/shared@^3.26.0":
+  version "3.26.0"
+  resolved "https://registry.yarnpkg.com/@react-types/shared/-/shared-3.26.0.tgz#21a8b579f0097ee78de18e3e580421ced89e4c8c"
+  integrity sha512-6FuPqvhmjjlpEDLTiYx29IJCbCNWPlsyO+ZUmCUXzhUv2ttShOXfw8CmeHWHftT/b2KweAWuzqSlfeXPR76jpw==
 
 "@remix-run/router@1.20.0":
   version "1.20.0"
@@ -1379,6 +1496,18 @@
   version "0.0.29"
   resolved "https://registry.yarnpkg.com/@types/json5/-/json5-0.0.29.tgz#ee28707ae94e11d2b827bcbe5270bcea7f3e71ee"
   integrity sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==
+
+"@types/lodash.debounce@^4.0.7":
+  version "4.0.9"
+  resolved "https://registry.yarnpkg.com/@types/lodash.debounce/-/lodash.debounce-4.0.9.tgz#0f5f21c507bce7521b5e30e7a24440975ac860a5"
+  integrity sha512-Ma5JcgTREwpLRwMM+XwBR7DaWe96nC38uCBDFKZWbNKD+osjVzdpnUSwBcqCptrp16sSOLBAUb50Car5I0TCsQ==
+  dependencies:
+    "@types/lodash" "*"
+
+"@types/lodash@*":
+  version "4.17.13"
+  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.17.13.tgz#786e2d67cfd95e32862143abe7463a7f90c300eb"
+  integrity sha512-lfx+dftrEZcdBPczf9d0Qv0x+j/rfNCMuC6OcfXmO8gkfeNAY88PgKUbvG56whcN23gc27yenwF6oJZXGFpYxg==
 
 "@types/node@^20.11.30":
   version "20.16.11"
@@ -3413,6 +3542,11 @@ locate-path@^6.0.0:
   integrity sha512-iPZK6eYjbxRu3uB4/WZ3EsEIMJFMqAoopl3R+zuq0UjcAm/MO6KCweDgPfP3elTztoKP3KtnVHxTn2NHBSDVUw==
   dependencies:
     p-locate "^5.0.0"
+
+lodash.debounce@^4.0.8:
+  version "4.0.8"
+  resolved "https://registry.yarnpkg.com/lodash.debounce/-/lodash.debounce-4.0.8.tgz#82d79bff30a67c4005ffd5e2515300ad9ca4d7af"
+  integrity sha512-FT1yDzDYEoYWhnSGnpE/4Kj1fLZkDFyqRb7fNt6FdYOSxlUWAtp42Eh6Wb0rGIv/m9Bgo7x4GhQbm5Ys4SG5ow==
 
 lodash.foreach@^4.5.0:
   version "4.5.0"

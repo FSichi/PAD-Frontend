@@ -92,6 +92,7 @@ export const CustomTabs = (props: Props) => {
                     width: `${borderStyles.width}px`,
                     background: '#000000',
                     position: 'relative',
+                    marginTop: '-30px',
                     x,
                 }}
                 transition={{ type: 'spring', stiffness: 300, damping: 30 }}

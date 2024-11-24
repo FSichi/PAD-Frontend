@@ -11,6 +11,7 @@ const LoginPage = lazy(() => import('pages/Public/LoginPage'));
 const ForgotPasswordPage = lazy(() => import('pages/Public/ForgotPasswordPage'));
 const Error404 = lazy(() => import('components/Layouts/NotFound/Error404'));
 const DefaultPage = lazy(() => import('pages/Private/DefaultPage'));
+const ComplementsPage = lazy(() => import('pages/Private/Complements'));
 
 export enum RoutesListPaths {
     ANY = '*',
@@ -74,7 +75,7 @@ export const PrivateRoutesList: AppRoutesInterface[] = [
     },
     {
         path: RoutesListPaths.COMPLEMENTS,
-        Component: <DefaultPage />,
+        Component: <ComplementsPage />,
     },
 ];
 

@@ -4,10 +4,10 @@ import { FormEvent, useEffect, useState } from 'react';
 interface Props<T> {
     defaultValues?: T;
     validate?: (values: T) => boolean;
-    // submitAction?: (values: T) => void;
+    submitAction?: (values: T) => void;
 }
 
-export const useForm = <T>({ defaultValues, validate }: Props<T>) => {
+export const useForm = <T>({ defaultValues, validate, submitAction }: Props<T>) => {
     const [formData, setFormData] = useState<T>(defaultValues || ({} as T));
     const [isEdited, setIsEdited] = useState<boolean>(false);
 
@@ -28,6 +28,9 @@ export const useForm = <T>({ defaultValues, validate }: Props<T>) => {
     const handleSubmit = (e: FormEvent) => {
         e.preventDefault();
         console.log(validateFields() ? 'Validation approved' : 'Validation rejected');
+        if (validateFields()) {
+            submitAction && submitAction(formData);
+        }
     };
 
     useEffect(() => {

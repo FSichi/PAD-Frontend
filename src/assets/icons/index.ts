@@ -20,6 +20,7 @@ import EditPenSVG from './edit-pen.svg';
 import CloseDrawerSVG from './close-drawer.svg';
 import ShowPasswordSVG from './show-password.svg';
 import HidePasswordSVG from './hide-password.svg';
+import CalendarSVG from './calendar.svg';
 
 // Como componentes React SVG
 import CommonArrowIcon from './common-arrow.svg?react';
@@ -41,8 +42,11 @@ import MenuUsersIcon from './users-menu.svg?react';
 import PaginationArrowIcon from './pagination-arrow.svg?react';
 import EditPenIcon from './edit-pen.svg?react';
 import CloseDrawerIcon from './close-drawer.svg?react';
+import CalendarIcon from './calendar.svg?react';
 
 export {
+    CalendarSVG,
+    CalendarIcon,
     ShowPasswordSVG,
     HidePasswordSVG,
     CommonArrowSVG,

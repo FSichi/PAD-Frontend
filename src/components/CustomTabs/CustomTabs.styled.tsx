@@ -66,9 +66,9 @@ export const StylesForButton = ({
 export const StylesForTitle = (titlePosition?: string) => ({
     container: titlePosition || 'flex gap-6' /* border-b border-[#E5E2E2] */,
     titleContainer: 'py-3 hover:cursor-pointer',
-    titleActive: 'text-cia-grey-dark',
+    titleActive: 'text-cia-purple-main',
     titleDisabled: 'text-[#2024214D]',
-    titleBase: 'text-2xl font-semibold',
+    titleBase: 'text-xl font-semibold',
 });
 
 export default { StylesForButton, StylesForTitle };

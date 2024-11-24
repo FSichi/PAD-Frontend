@@ -44,3 +44,4 @@ export interface CarouselSettings {
     pauseOnHover?: boolean;
     dots?: boolean;
 }
+export type ComplementType = 'color' | 'categoria' | 'marca' | 'talle' | 'tipoTalle';

@@ -9,17 +9,28 @@ interface Props extends ContainerProps {
     containerStyles: string;
     isDisabled: boolean;
     name: string;
+    inputType: 'text' | 'password' | 'email' | 'number';
 }
 
 export const TextInput = (props: Props) => {
-    const { label, value, containerStyles, handleChange, placeholder, isDisabled, name } = props;
+    const {
+        label,
+        value,
+        containerStyles,
+        handleChange,
+        placeholder,
+        isDisabled,
+        name,
+        inputType,
+    } = props;
 
     return (
         <div className={containerStyles}>
             {label && <p className={Styles.label}>{label}</p>}
             <input
+                id={name}
                 name={name}
-                type="text"
+                type={inputType}
                 value={value}
                 placeholder={placeholder}
                 onChange={handleChange}

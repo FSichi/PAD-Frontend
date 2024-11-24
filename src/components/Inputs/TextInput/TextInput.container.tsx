@@ -10,10 +10,17 @@ export interface Props {
     placeholder?: string;
     isDisabled?: boolean;
     name?: string;
+    inputType?: 'text' | 'password' | 'email' | 'number';
 }
 
 export const TextInputContainer = (props: Props) => {
-    const { containerStyles = '', isDisabled = false, onChange, name = '' } = props;
+    const {
+        containerStyles = '',
+        isDisabled = false,
+        onChange,
+        name = '',
+        inputType = 'text',
+    } = props;
 
     const { t } = useTranslation();
 
@@ -28,6 +35,7 @@ export const TextInputContainer = (props: Props) => {
         handleChange,
         isDisabled,
         name,
+        inputType,
     };
 
     return <TextInput {...childProps} />;
