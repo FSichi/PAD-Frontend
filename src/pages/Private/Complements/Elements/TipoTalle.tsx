@@ -12,6 +12,7 @@ import { useEffect, useState } from 'react';
 import { CustomDrawer } from 'components/CustomDrawer';
 import { NewItem } from '../Drawers/NewItem';
 import { EditItem } from '../Drawers/EditItem';
+import { TipoTalleResponse } from 'db/interfaces/Complements';
 
 const tableHeaders: TableHeaderData[] = [
     {
@@ -37,15 +38,20 @@ const tableHeaders: TableHeaderData[] = [
 const tableHeadersFormatted = getTableHeaders(tableHeaders, []);
 
 export const TipoTalle = () => {
-    const [drawerType, setDrawerType] = useState<'new' | 'edit'>('new');
     const { drawer, OpenDrawer } = useDrawer();
+    const [drawerType, setDrawerType] = useState<'new' | 'edit'>('new');
+    const [itemDrawerData, setItemDrawerData] = useState<{
+        id: number;
+        description: string;
+    }>();
 
     const { data, refetch } = useGet({
         name: 'Complements - GetTipoTalles',
         endpoint: () => ComplementService.getTipoTalles(),
     });
 
-    const handleOpenDrawer = (type: 'new' | 'edit') => {
+    const handleOpenDrawer = (type: 'new' | 'edit', data?: TipoTalleResponse) => {
+        data && setItemDrawerData({ id: data.idTipoTalle, description: data.descripcion });
         setDrawerType(type);
         OpenDrawer();
     };
@@ -92,7 +98,7 @@ export const TipoTalle = () => {
                                 style={getColumnWidth(tableHeaders[2].width)}>
                                 <Button
                                     variant="transparent"
-                                    onClick={() => handleOpenDrawer('edit')}
+                                    onClick={() => handleOpenDrawer('edit', data)}
                                     customStyles="-ml-2">
                                     <CustomIcon color="black" Icon={EditPenIcon} />
                                 </Button>
@@ -106,7 +112,7 @@ export const TipoTalle = () => {
                 {drawerType === 'new' ? (
                     <NewItem type="tipoTalle" itemId={data?.data?.length + 1 || 0} />
                 ) : (
-                    <EditItem />
+                    <EditItem type="tipoTalle" itemData={itemDrawerData!} />
                 )}
             </CustomDrawer>
         </>

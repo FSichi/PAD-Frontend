@@ -12,6 +12,7 @@ import { CustomDrawer } from 'components/CustomDrawer';
 import { NewItem } from '../Drawers/NewItem';
 import { useEffect, useState } from 'react';
 import { EditItem } from '../Drawers/EditItem';
+import { ColorResponse } from 'db/interfaces/Complements';
 
 const tableHeaders: TableHeaderData[] = [
     {
@@ -39,13 +40,18 @@ const tableHeadersFormatted = getTableHeaders(tableHeaders, []);
 export const Color = () => {
     const [drawerType, setDrawerType] = useState<'new' | 'edit'>('new');
     const { drawer, OpenDrawer } = useDrawer();
+    const [itemDrawerData, setItemDrawerData] = useState<{
+        id: number;
+        description: string;
+    }>();
 
     const { data, refetch } = useGet({
         name: 'Complements - GetColors',
         endpoint: () => ComplementService.getColors(),
     });
 
-    const handleOpenDrawer = (type: 'new' | 'edit') => {
+    const handleOpenDrawer = (type: 'new' | 'edit', data?: ColorResponse) => {
+        data && setItemDrawerData({ id: data.idColor, description: data.nombre });
         setDrawerType(type);
         OpenDrawer();
     };
@@ -92,7 +98,7 @@ export const Color = () => {
                                 style={getColumnWidth(tableHeaders[2].width)}>
                                 <Button
                                     variant="transparent"
-                                    onClick={() => handleOpenDrawer('edit')}
+                                    onClick={() => handleOpenDrawer('edit', data)}
                                     customStyles="-ml-2">
                                     <CustomIcon color="black" Icon={EditPenIcon} />
                                 </Button>
@@ -106,7 +112,7 @@ export const Color = () => {
                 {drawerType === 'new' ? (
                     <NewItem type="color" itemId={data?.data?.length + 1 || 0} />
                 ) : (
-                    <EditItem />
+                    <EditItem type="color" itemData={itemDrawerData!} />
                 )}
             </CustomDrawer>
         </>

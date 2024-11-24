@@ -12,6 +12,7 @@ import { EditItem } from '../Drawers/EditItem';
 import { CustomDrawer } from 'components/CustomDrawer';
 import { useEffect, useState } from 'react';
 import { useDrawer } from 'hooks/useDrawer';
+import { CategoriaResponse } from 'db/interfaces/Complements';
 
 const tableHeaders: TableHeaderData[] = [
     {
@@ -40,12 +41,18 @@ export const Categoria = () => {
     const [drawerType, setDrawerType] = useState<'new' | 'edit'>('new');
     const { drawer, OpenDrawer } = useDrawer();
 
+    const [itemDrawerData, setItemDrawerData] = useState<{
+        id: number;
+        description: string;
+    }>();
+
     const { data, refetch } = useGet({
         name: 'Complements - GetCategorias',
         endpoint: () => ComplementService.getCategorias(),
     });
 
-    const handleOpenDrawer = (type: 'new' | 'edit') => {
+    const handleOpenDrawer = (type: 'new' | 'edit', data?: CategoriaResponse) => {
+        data && setItemDrawerData({ id: data.idCategoria, description: data.descripcion });
         setDrawerType(type);
         OpenDrawer();
     };
@@ -92,7 +99,7 @@ export const Categoria = () => {
                                 style={getColumnWidth(tableHeaders[2].width)}>
                                 <Button
                                     variant="transparent"
-                                    onClick={() => handleOpenDrawer('edit')}
+                                    onClick={() => handleOpenDrawer('edit', data)}
                                     customStyles="-ml-2">
                                     <CustomIcon color="black" Icon={EditPenIcon} />
                                 </Button>
@@ -106,7 +113,7 @@ export const Categoria = () => {
                 {drawerType === 'new' ? (
                     <NewItem type="categoria" itemId={data?.data?.length + 1 || 0} />
                 ) : (
-                    <EditItem />
+                    <EditItem type="categoria" itemData={itemDrawerData!} />
                 )}
             </CustomDrawer>
         </>

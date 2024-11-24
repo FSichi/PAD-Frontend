@@ -21,10 +21,6 @@ import { ComplementType, SelectOption, SelectOptionType } from 'utils/interfaces
 interface Props {
     type: ComplementType;
     itemId: number;
-    otherInfo?: {
-        idTipoTalle: number;
-        descripcion: string;
-    };
 }
 
 interface IFormData {
@@ -57,7 +53,7 @@ export const NewItem = ({ type, itemId }: Props) => {
     });
 
     const { mutate } = useAction<any, any>({
-        name: 'Complements - Create',
+        name: 'Complements - Create -' + type + ' - ' + itemId,
         endpoint: endpointsType[type],
     });
 

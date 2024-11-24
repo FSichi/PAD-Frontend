@@ -10,7 +10,11 @@ import {
     TipoTalleRequest,
     TipoTalleResponse,
 } from 'db/interfaces/Complements';
-import { fetchGetFromService, fetchPostFromService } from 'db/services/main.service';
+import {
+    fetchGetFromService,
+    fetchPostFromService,
+    fetchPutFromService,
+} from 'db/services/main.service';
 
 const getService = <T>(endpoint: string, param?: string) =>
     fetchGetFromService<T>({ baseURL: '', endpoint, param });
@@ -18,8 +22,8 @@ const getService = <T>(endpoint: string, param?: string) =>
 const postService = <T>(endpoint: string, body: any) =>
     fetchPostFromService<T>({ baseURL: '', endpoint, data: body });
 
-// const putService = <T>(endpoint: string, body: any) =>
-//     fetchPutFromService<T>({ baseURL: '/v1/chat-messages', endpoint, data: body });
+const putService = <T>(endpoint: string, body: any) =>
+    fetchPutFromService<T>({ baseURL: '', endpoint, data: body });
 
 export default {
     getColors: (params?: string) => getService<ColorResponse[]>('/Color', params),
@@ -33,4 +37,10 @@ export default {
     createMarca: (body: MarcaRequest) => postService<string>('/Marca', body),
     createTipoTalle: (body: TipoTalleRequest) => postService<string>('/TipoTalle', body),
     createTalle: (body: TalleRequest) => postService<string>('/Talle', body),
+
+    updateColor: (body: ColorRequest) => putService<string>('/Color', body),
+    updateCategoria: (body: CategoriaRequest) => putService<string>('/Categoria', body),
+    updateMarca: (body: MarcaRequest) => putService<string>('/Marca', body),
+    updateTipoTalle: (body: TipoTalleRequest) => putService<string>('/TipoTalle', body),
+    updateTalle: (body: TalleRequest) => putService<string>('/Talle', body),
 };

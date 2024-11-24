@@ -12,6 +12,7 @@ import { useEffect, useState } from 'react';
 import { CustomDrawer } from 'components/CustomDrawer';
 import { NewItem } from '../Drawers/NewItem';
 import { EditItem } from '../Drawers/EditItem';
+import { MarcaResponse } from 'db/interfaces/Complements';
 
 const tableHeaders: TableHeaderData[] = [
     {
@@ -42,10 +43,16 @@ export const Marca = () => {
         endpoint: () => ComplementService.getMarcas(),
     });
 
+    const [itemDrawerData, setItemDrawerData] = useState<{
+        id: number;
+        description: string;
+    }>();
+
     const [drawerType, setDrawerType] = useState<'new' | 'edit'>('new');
     const { drawer, OpenDrawer } = useDrawer();
 
-    const handleOpenDrawer = (type: 'new' | 'edit') => {
+    const handleOpenDrawer = (type: 'new' | 'edit', data?: MarcaResponse) => {
+        data && setItemDrawerData({ id: data.idMarca, description: data.nombre });
         setDrawerType(type);
         OpenDrawer();
     };
@@ -92,7 +99,7 @@ export const Marca = () => {
                                 style={getColumnWidth(tableHeaders[2].width)}>
                                 <Button
                                     variant="transparent"
-                                    onClick={() => handleOpenDrawer('edit')}
+                                    onClick={() => handleOpenDrawer('edit', data)}
                                     customStyles="-ml-2">
                                     <CustomIcon color="black" Icon={EditPenIcon} />
                                 </Button>
@@ -106,7 +113,7 @@ export const Marca = () => {
                 {drawerType === 'new' ? (
                     <NewItem type="marca" itemId={data?.data?.length + 1 || 0} />
                 ) : (
-                    <EditItem />
+                    <EditItem type="marca" itemData={itemDrawerData!} />
                 )}
             </CustomDrawer>
         </>
