@@ -10,8 +10,11 @@ import { TranslationsKeys } from 'utils/i18n';
 const LoginPage = lazy(() => import('pages/Public/LoginPage'));
 const ForgotPasswordPage = lazy(() => import('pages/Public/ForgotPasswordPage'));
 const Error404 = lazy(() => import('components/Layouts/NotFound/Error404'));
-const DefaultPage = lazy(() => import('pages/Private/DefaultPage'));
+// const DefaultPage = lazy(() => import('pages/Private/DefaultPage'));
 const ComplementsPage = lazy(() => import('pages/Private/Complements'));
+const BaseArticlePage = lazy(() => import('pages/Private/Articles/BaseArticlePage'));
+const StockArticlePage = lazy(() => import('pages/Private/Articles/StockArticlePage'));
+const SalesPage = lazy(() => import('pages/Private/SalesPage'));
 
 export enum RoutesListPaths {
     ANY = '*',
@@ -63,15 +66,15 @@ export const PrivateRoutesList: AppRoutesInterface[] = [
     },
     {
         path: RoutesListPaths.SALES,
-        Component: <DefaultPage />,
+        Component: <SalesPage />,
     },
     {
         path: RoutesListPaths.BASE_ARTICLES,
-        Component: <DefaultPage />,
+        Component: <BaseArticlePage />,
     },
     {
         path: RoutesListPaths.STOCK_ARTICLES,
-        Component: <DefaultPage />,
+        Component: <StockArticlePage />,
     },
     {
         path: RoutesListPaths.COMPLEMENTS,
