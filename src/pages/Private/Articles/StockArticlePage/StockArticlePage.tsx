@@ -50,7 +50,7 @@ const tableHeaders: TableHeaderData[] = [
         sort: true,
     },
     {
-        key: 'categoriaDescripcion',
+        key: 'color',
         title: 'Color',
         width: 'w-[100px]',
         sort: true,

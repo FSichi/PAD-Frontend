@@ -16,8 +16,8 @@ const Styles = ({ menuHeight, customStyles }: Props) => {
         control: (provided: any, state: any) => ({
             ...provided,
             borderRadius: 6,
-            minHeight: '48px',
-            height: '48px',
+            minHeight: '40px',
+            height: '40px',
             textAlign: 'start',
             borderColor: state.isFocused ? '#64748B' : customStyles.borderColor, // Cambia el color del borde cuando está enfocado
             boxShadow: state.isFocused ? 'none' : provided.boxShadow,
@@ -53,7 +53,7 @@ const Styles = ({ menuHeight, customStyles }: Props) => {
         }),
         valueContainer: (provided: any, _state: any) => ({
             ...provided,
-            height: '48px',
+            height: '40px',
         }),
         input: (provided: any, _state: any) => ({
             ...provided,
@@ -67,7 +67,7 @@ const Styles = ({ menuHeight, customStyles }: Props) => {
         }),
         indicatorsContainer: (provided: any, _state: any) => ({
             ...provided,
-            height: '48px',
+            height: '40px',
         }),
         dropdownIndicator: (provided: any, _state: any) => ({
             ...provided,

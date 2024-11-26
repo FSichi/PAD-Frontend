@@ -1,6 +1,6 @@
 export interface SelectOption {
     label: string;
-    value: string | number | boolean;
+    value: string | number | boolean | null;
 }
 
 export interface FilterConfig {

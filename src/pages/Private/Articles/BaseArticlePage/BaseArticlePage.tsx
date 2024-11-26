@@ -8,7 +8,11 @@ import { Button } from 'components/Button';
 import { CustomIcon } from 'components/Icon/CustomIcon';
 import { EditPenIcon } from 'assets/icons';
 import { useGet } from 'hooks/db/useGet';
-import { ArticleService } from 'db/services/app';
+import { ArticleService, ComplementService } from 'db/services/app';
+import { FilterConfig } from 'utils/interfaces/filters.types';
+import { useQueryDBParams } from 'hooks/useQueryDBParams';
+import { FiltersCreator } from 'components/Filters';
+import { useMemo } from 'react';
 
 interface Props extends ContainerProps {
     t: ITranslate;
@@ -64,10 +68,69 @@ const tableHeadersFormatted = getTableHeaders(tableHeaders, []);
 export const BaseArticlePage = (_props: Props) => {
     // const {  } = props;
 
+    const { queryFilter, handleSetFilter } = useQueryDBParams({
+        page: 1,
+        setPage: () => {},
+        pageSize: 200,
+    });
+
     const { data } = useGet({
         name: 'Articles - GetBaseArticles',
-        endpoint: () => ArticleService.getArticulosBase(),
+        queryFilter,
+        endpoint: () => ArticleService.getArticulosBase(queryFilter.slice(19)),
+        enabled: queryFilter.length > 10,
     });
+
+    const { data: marcaOptionsList } = useGet({
+        name: 'Complements - GetMarcas',
+        endpoint: () => ComplementService.getMarcas(),
+    });
+
+    const { data: categoriaOptionsList } = useGet({
+        name: 'Complements - GetCategorias',
+        endpoint: () => ComplementService.getCategorias(),
+    });
+
+    const queryFiltersSettings: FilterConfig[] = useMemo(
+        () => [
+            { key: 'codigoBarra', type: 'text', label: 'Codigo de Barras' },
+            {
+                key: 'marca',
+                type: 'select',
+                label: 'Marca',
+                containerStyles: 'ml-4 w-28',
+                selectProperties: {
+                    defaultValue: {
+                        value: null,
+                        label: '',
+                    },
+                    options:
+                        marcaOptionsList?.data?.map(item => ({
+                            value: item.nombre,
+                            label: item.nombre,
+                        })) || [],
+                },
+            },
+            {
+                key: 'categoria',
+                type: 'select',
+                label: 'Categoria',
+                containerStyles: 'ml-4 w-28',
+                selectProperties: {
+                    defaultValue: {
+                        value: null,
+                        label: '',
+                    },
+                    options:
+                        categoriaOptionsList?.data?.map(item => ({
+                            value: item.descripcion,
+                            label: item.descripcion,
+                        })) || [],
+                },
+            },
+        ],
+        [marcaOptionsList, categoriaOptionsList],
+    );
 
     return (
         <section className={Styles.container}>
@@ -86,7 +149,13 @@ export const BaseArticlePage = (_props: Props) => {
                 tableHeaders={tableHeadersFormatted}
                 tableData={data?.data || []}
                 hasPagination
-                paginationSettings={{ page: 1, setPage: () => {} }}>
+                paginationSettings={{ page: 1, setPage: () => {} }}
+                hasFilters
+                filterSettings={{
+                    filters: queryFiltersSettings,
+                    handleSetFilter,
+                    hasSearch: true,
+                }}>
                 {sortedData =>
                     sortedData.map((data, index) => (
                         <tr key={index} className={Styles.table.row}>

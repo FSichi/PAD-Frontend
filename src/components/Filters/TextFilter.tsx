@@ -3,7 +3,7 @@ import { useRef } from 'react';
 import { FilterComponentProps } from 'utils/interfaces/filters.types';
 
 const Styles = {
-    container: `w-40 h-[40px] hover:border-ac-electrician focus-within:border-ac-electrician bg-ac-white border border-ac-grey-2 rounded-md hover:cursor-pointer`,
+    container: `w-40 h-[40px] hover:border-cia-purple-main focus-within:border-cia-purple-main bg-cia-white border border-cia-grey-light rounded-md hover:cursor-pointer`,
     inputContainer: 'flex mx-2 items-center',
     label: 'text-ac-pearlLightGray typography-indicator mb-[6px]',
     input: 'w-full h-full mt-[10px] bg-transparent focus:outline-none typography-body1-medium text-ac-platinumGray placeholder:text-ac-pearlLightGray hover:cursor-pointer',
