@@ -7,6 +7,8 @@ import { TableHeaderData } from 'utils/interfaces/Table.types';
 import { getColumnWidth, getTableHeaders } from 'utils/helpers/table.helpers';
 import { TableWrapper } from 'components/Shared/TableWrapper';
 import { StockArticlesAdapter } from 'db/adapters/Articles.adapter';
+import { useQueryDBParams } from 'hooks/useQueryDBParams';
+import { FilterConfig } from 'utils/interfaces/filters.types';
 
 interface Props extends ContainerProps {
     t: ITranslate;
@@ -59,12 +61,23 @@ const tableHeaders: TableHeaderData[] = [
 
 const tableHeadersFormatted = getTableHeaders(tableHeaders, []);
 
+const queryFiltersSettings: FilterConfig[] = [
+    { key: 'codigoBarra', type: 'text', label: 'Codigo de Barras' },
+];
+
 export const StockArticlePage = (_props: Props) => {
     // const {  } = props;
 
+    const { queryFilter, handleSetFilter } = useQueryDBParams({
+        page: 1,
+        setPage: () => {},
+        pageSize: 200,
+    });
+
     const { data } = useGet({
         name: 'Articles - GetStockArticles',
-        endpoint: () => ArticleService.getArticulosStock(),
+        queryFilter,
+        endpoint: () => ArticleService.getArticulosStock(`idSucursal=5${queryFilter.slice(19)}`),
         adapter: data => StockArticlesAdapter(data),
     });
 
@@ -77,6 +90,12 @@ export const StockArticlePage = (_props: Props) => {
             <TableWrapper
                 tableHeaders={tableHeadersFormatted}
                 tableData={data?.data || []}
+                hasFilters
+                filterSettings={{
+                    hasSearch: false,
+                    filters: queryFiltersSettings,
+                    handleSetFilter,
+                }}
                 hasPagination
                 paginationSettings={{ page: 1, setPage: () => {} }}>
                 {sortedData =>

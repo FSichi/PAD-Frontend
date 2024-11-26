@@ -13,40 +13,56 @@ export interface ArticuloResponse {
     categoriaDescripcion: string;
 }
 
-export interface StockResponse {
-    id: number;
-    talle: {
-        id: number;
-        talleArticulo: string;
-        tipoTalle: {
-            id: number;
-            descripcion: string;
-        };
-    };
-    color: {
-        id: number;
-        nombre: string;
-    };
-    articulo: {
-        id: number;
-        descripcion: string;
-        codigoBarras: string;
-        costo: number;
-        margenGanancia: number;
-        precioFinal: number;
-        netoGravado: number;
-        porcentajeIVA: number;
-        state: boolean;
-        marca: {
-            id: number;
-            nombre: string;
-        };
-        categoria: {
-            id: number;
-            descripcion: string;
-        };
-    };
+export interface NewStock {
+    idInventario: number;
+    cantidad: number;
+    idStock: number;
+    stockColor: string;
+    stockTalle: string;
+    stockTalleTipoTalle: string;
+    idArticulo: number;
+    codigoBarra: string;
+    articuloCategoria: string;
+    articuloDescripcion: string;
+    articuloMarca: string;
+    idSucursal: number;
+    nombreSucursal: string;
 }
+
+// export interface StockResponse {
+//     id: number;
+//     talle: {
+//         id: number;
+//         talleArticulo: string;
+//         tipoTalle: {
+//             id: number;
+//             descripcion: string;
+//         };
+//     };
+//     color: {
+//         id: number;
+//         nombre: string;
+//     };
+//     articulo: {
+//         id: number;
+//         descripcion: string;
+//         codigoBarras: string;
+//         costo: number;
+//         margenGanancia: number;
+//         precioFinal: number;
+//         netoGravado: number;
+//         porcentajeIVA: number;
+//         state: boolean;
+//         marca: {
+//             id: number;
+//             nombre: string;
+//         };
+//         categoria: {
+//             id: number;
+//             descripcion: string;
+//         };
+//     };
+// }
 
 export interface StockResponseFormatted {
     id: number;

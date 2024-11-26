@@ -1,4 +1,4 @@
-import { ArticuloResponse, StockResponse } from 'db/interfaces/Articles';
+import { ArticuloResponse, NewStock } from 'db/interfaces/Articles';
 import { ColorRequest } from 'db/interfaces/Complements';
 import {
     fetchGetFromService,
@@ -22,7 +22,8 @@ export default {
     createArticuloBase: (body: ColorRequest) => postService<string>('/Articulo', body),
     updateArticuloBase: (body: ColorRequest) => putService<string>('/Articulo', body),
 
-    getArticulosStock: (params?: string) => getService<StockResponse[]>('/Stock', params),
+    getArticulosStock: (params?: string) =>
+        getService<NewStock[]>('Inventario/getInventarioByCodigoBarra', params),
     createArticuloStock: (body: ColorRequest) => postService<string>('/Stock', body),
     updateArticuloStock: (body: ColorRequest) => putService<string>('/Stock', body),
 };

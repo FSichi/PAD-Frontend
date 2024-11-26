@@ -11,7 +11,6 @@ import { useGet } from 'hooks/db/useGet';
 import { ArticleService, ComplementService } from 'db/services/app';
 import { FilterConfig } from 'utils/interfaces/filters.types';
 import { useQueryDBParams } from 'hooks/useQueryDBParams';
-import { FiltersCreator } from 'components/Filters';
 import { useMemo } from 'react';
 
 interface Props extends ContainerProps {
