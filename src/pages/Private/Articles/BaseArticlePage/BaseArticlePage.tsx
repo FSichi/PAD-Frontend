@@ -153,7 +153,7 @@ export const BaseArticlePage = (_props: Props) => {
                 filterSettings={{
                     filters: queryFiltersSettings,
                     handleSetFilter,
-                    hasSearch: true,
+                    hasSearch: false,
                 }}>
                 {sortedData =>
                     sortedData.map((data, index) => (
